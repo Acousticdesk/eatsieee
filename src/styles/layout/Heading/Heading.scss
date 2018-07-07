@@ -1,0 +1,21 @@
+@import 'mixins/mixin';
+
+.l-h1 {
+  @include heading(map-get($type-scale, big));
+}
+
+.l-h2 {
+  @include heading(map-get($type-scale, bigger));
+}
+
+.l-h3 {
+  @include heading(map-get($type-scale, regular));
+}
+
+.l-h4 {
+  @include heading(map-get($type-scale, small));
+}
+
+.l-h5 {
+  @include heading(map-get($type-scale, smaller));
+}

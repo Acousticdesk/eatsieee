@@ -1,0 +1,12 @@
+@import 'Button/Button';
+@import 'Card';
+@import 'List';
+
+.logo {
+  padding: em(10) em(20);
+
+  &.default {
+    font-size: map-get($type-scale, big);
+    border: 2px solid map-get($grey, body-copy);
+  }
+}

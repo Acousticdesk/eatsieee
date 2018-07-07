@@ -1,0 +1,34 @@
+.list {
+  list-style-type: none;
+  margin: em($default-gutter-size) 0;
+  padding: 0;
+
+  @include e(item) {
+    display: flex;
+    align-items: center;
+    margin: em($default-gutter-size) 0;
+  }
+
+  @include e(bullet) {
+    border-radius: 50%;
+    width: em(50);
+    height: em(50);
+    line-height: em(50);
+    text-align: center;
+    margin-right: em($default-gutter-size);
+
+    &.skin {
+      border: 1px solid #eee;
+      color: map-get($grey, body-copy);
+    }
+  }
+
+  @include e(item-content) {
+    padding-bottom: em($default-gutter-size);
+    flex: 1 1 auto;
+
+    &.skin {
+      border-bottom: 1px solid #eee;
+    }
+  }
+}

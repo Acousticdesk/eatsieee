@@ -1,0 +1,22 @@
+$base-font: 16px;
+$base-font-tablet: 14px;
+
+$grey: (
+  body-copy: #202020
+);
+
+$type-scale: (
+  max: px(3.998),
+  large: px(2.827),
+  big: px(1.999),
+  bigger: px(1.414),
+  regular: px(1),
+  smaller: px(0.707),
+  small: px(0.5),
+  min: px(0.354)
+);
+
+$default-gutter-size: 24px;
+
+$small-screen: 1190px;
+$tablet: 768px;

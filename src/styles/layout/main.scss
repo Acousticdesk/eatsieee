@@ -1,0 +1,15 @@
+@import 'Header';
+@import 'Heading/Heading';
+@import 'List';
+@import 'Paragraph';
+@import 'SideMenu';
+
+.l-wrapper {
+  width: em(1190);
+  margin: 0 auto em(300) auto;
+  padding: 0 em(16);
+
+  @media screen and (max-width: $small-screen) {
+    width: em($tablet, $base-font-tablet);
+  }
+}

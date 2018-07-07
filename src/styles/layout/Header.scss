@@ -1,0 +1,22 @@
+.l-header {
+  padding: em($default-gutter-size) 0;
+  display: flex;
+  align-items: center;
+  margin-bottom: em(125);
+
+  @include e(navigation) {
+    margin-left: auto;
+  }
+
+  @include e(link) {
+    margin-right: em($default-gutter-size);
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    &.default {
+      font-size: em(map-get($type-scale, bigger));
+    }
+  }
+}

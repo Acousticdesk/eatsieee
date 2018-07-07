@@ -1,0 +1,42 @@
+@mixin btn-default-skin {
+  &.default {
+    position: relative;
+    color: map-get($grey, body-copy);
+    background: #eee;
+  }
+
+  &.default:before,
+  &.default:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: opacity 0.3s linear;
+  }
+
+  &.default:before {
+    box-shadow: dp-shadow(2);
+  }
+
+  &.default:after {
+    opacity: 0;
+    visibility: hidden;
+    box-shadow: dp-shadow(8);
+  }
+
+  &.default:active {
+    background: #d5d5d5;
+  }
+
+  &.default:active:before {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &.default:active:after {
+    opacity: 1;
+    visibility: visible;
+  }
+}

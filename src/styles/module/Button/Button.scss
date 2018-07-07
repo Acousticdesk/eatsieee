@@ -1,0 +1,41 @@
+@import 'mixins/default-skin';
+
+.btn {
+  height: em(48);
+  line-height: em(4.8);
+  text-align: center;
+  padding: 0 em(8);
+  min-width: em(88);
+
+  @include m(left-offset) {
+    margin-left: em(8);
+  }
+
+  &.skin {
+    font-weight: 500;
+    font-size: map-get($type-scale, regular);
+    border-radius: 2px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+  }
+
+  &.skin:active {
+    outline: none;
+  }
+
+  &.skin:focus {
+    outline: none;
+  }
+
+  @include btn-default-skin();
+
+  &.tertiary {
+    background: transparent;
+    color: #309bf3;
+  }
+
+  &.tertiary:active {
+    background: #eee;
+  }
+}

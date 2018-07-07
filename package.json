@@ -1,0 +1,43 @@
+{
+  "name": "redux-learn",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.0-14",
+    "@fortawesome/free-solid-svg-icons": "^5.1.0-11",
+    "@fortawesome/react-fontawesome": "0.1.0-11",
+    "i": "^0.3.6",
+    "normalize-scss": "^7.0.1",
+    "npm": "^6.1.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.4",
+    "redux": "^4.0.0",
+    "redux-actions": "^2.4.0",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "main": "index.js",
+  "devDependencies": {
+    "eslint-config-airbnb": "^17.0.0",
+    "mini-css-extract-plugin": "0.3.0",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.3",
+    "webpack": "^4.15.1",
+    "webpack-clean": "^1.2.1",
+    "webpack-cli": "^3.0.8"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,19 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: em($default-gutter-size);
+  margin: em($default-gutter-size);
+  border-radius: 2px;
+
+  @include m(3) {
+    width: 33.333333333333333%;
+  }
+
+  @include e(content) {
+    flex: 1 1 auto;
+  }
+
+  &.skin {
+    box-shadow: dp-shadow(1);
+  }
+}

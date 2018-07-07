@@ -1,0 +1,4 @@
+@mixin heading ($fontSize) {
+  font-size: em($fontSize);
+  margin: 0 0 em($fontSize * 2, $fontSize) 0;
+}
