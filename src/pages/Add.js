@@ -26,7 +26,7 @@ export default function ({onMealInputChange, onAddMeal, value}) {
         <i>Example: 12:34AM</i>
       </fieldset>
       <br/>
-      <button onClick={onAddMeal}>Add A Meal</button>
+      <button onClick={onAddMeal} className="btn skin default">Add A Meal</button>
     </React.Fragment>
   );
 }

@@ -3,9 +3,19 @@
   right: 0;
   top: 0;
   bottom: 0;
-  width: 320px;
+  min-width: 280px;
 
   &.skin {
+    background: #fff;
     box-shadow: dp-shadow(16);
+    transition: right 300ms ease-out, opacity 300ms ease-out, visibility 1ms 300ms linear;
+    opacity: 0;
+    right: -280px;
+  }
+
+  &.skin.show {
+    visibility: visible;
+    opacity: 1;
+    right: 0;
   }
 }

@@ -12,4 +12,8 @@
   @media screen and (max-width: $small-screen) {
     width: em($tablet, $base-font-tablet);
   }
+
+  @media screen and (max-width: $tablet) {
+    width: 100%;
+  }
 }

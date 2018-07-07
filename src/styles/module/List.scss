@@ -4,9 +4,23 @@
   padding: 0;
 
   @include e(item) {
-    display: flex;
-    align-items: center;
-    margin: em($default-gutter-size) 0;
+    &.skin {
+      color: map-get($grey, body-copy);
+    }
+    &.skin:hover {
+      background: #eee;
+    }
+
+    @include m(block) {
+      display: block;
+      padding: em($default-gutter-size);
+    }
+
+    @include m(flex) {
+      display: flex;
+      align-items: center;
+      margin: em($default-gutter-size) 0;
+    }
   }
 
   @include e(bullet) {

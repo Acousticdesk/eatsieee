@@ -7,6 +7,14 @@
 
   @include m(3) {
     width: 33.333333333333333%;
+
+    @media screen and (max-width: $small-screen) {
+      width: 50%;
+    }
+
+    @media screen and (max-width: 450px) {
+      width: 100%;
+    }
   }
 
   @include e(content) {

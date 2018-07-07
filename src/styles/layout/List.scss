@@ -1,4 +1,5 @@
 .l-list {
   display: flex;
+  flex-wrap: wrap;
   margin: em($default-gutter-size) em(-$default-gutter-size);
 }
