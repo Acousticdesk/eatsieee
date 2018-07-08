@@ -1,0 +1,59 @@
+@keyframes appearance {
+  from {
+    transform: scale(0, 1);
+  }
+  to {
+    transform: scale(1, 1);
+  }
+}
+
+.input {
+  position: relative;
+  padding: $default-gutter-size 0 0 0;
+
+  &.skin {
+    border-bottom: 2px solid #eee;
+
+    @include m(focused) {
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: $blue;
+        animation: appearance 150ms linear;
+      }
+    }
+  }
+
+  @include e(label) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(0, em(20));
+
+    &.skin {
+      color: map-get($grey, body-color);
+      transition: transform 150ms linear;
+
+      @include m(focused) {
+        transform: translate(0, 0);
+      }
+    }
+  }
+
+  @include e(field) {
+    display: block;
+    width: 100%;
+
+    &.skin {
+      border: none;
+    }
+
+    &.skin:focus {
+      outline: none;
+    }
+  }
+}

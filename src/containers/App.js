@@ -12,12 +12,21 @@ import MealCard from '../components/MealCard';
 import Meal from '../components/Meal';
 import { fetchMealsIfNeeded, removeMeal } from '../modules/meals/actions';
 import { changeNewMeal, postMeal } from '../modules/newMeal/actions';
-import { toggleMobileSideMenu } from '../modules/ui/actions';
+import { toggleMobileSideMenu, inputFocus } from '../modules/ui/actions';
 import SideMenu from '../components/SideMenu';
+import { TIME_FIELD_NAME } from '../enums';
 
 class App extends Component {
   onMealInputChange = (e) => {
     this.props.changeNewMeal(this.getMeal(e.target));
+  };
+
+  onMealInputFocus = ({target: {name}}) => {
+    this.props.inputFocus(name);
+  };
+
+  onMealInputBlur = () => {
+    this.props.inputFocus(null);
   };
 
   onAddMeal = () => {
@@ -31,17 +40,13 @@ class App extends Component {
     this.props.removeMeal(time);
   };
 
-  onWrapperClick = () => {
-    this.props.toggleMobileSideMenu(false);
-  };
-
   static onSideMenuClick(e) {
     e.stopPropagation();
   };
 
   static getMeal (input) {
     return {
-      [input.dataset.type]: input.value
+      [input.name]: input.value
     };
   };
 
@@ -52,11 +57,17 @@ class App extends Component {
     });
   };
 
+  hideSideMenu = () => {
+    if (this.props.isSideMenuShown) {
+      this.props.toggleMobileSideMenu(false);
+    }
+  };
+
   render() {
     return (
-      <div onClick={this.onWrapperClick} className="l-wrapper">
+      <div onClick={this.hideSideMenu} className="l-wrapper">
         <Header/>
-        <SideMenu onClick={App.onSideMenuClick} isShown={this.props.isSideMenuShown}/>
+        <SideMenu onLinkClick={this.hideSideMenu} onClick={App.onSideMenuClick} isShown={this.props.isSideMenuShown}/>
         <Switch>
           <Route
             exact
@@ -73,6 +84,9 @@ class App extends Component {
               <Add
                 onAddMeal={this.onAddMeal}
                 onMealInputChange={this.onMealInputChange}
+                onMealInputFocus={this.onMealInputFocus}
+                onMealInputBlur={this.onMealInputBlur}
+                isMealInputFocused={this.props.inputFocused === TIME_FIELD_NAME}
                 value={this.props.newMeal} />
             }
           />
@@ -87,7 +101,8 @@ const mapStateToProps = (state) => ({
   meals: state.meals,
   isLoading: state.ui.isLoading,
   newMeal: state.newMeal,
-  isSideMenuShown: state.ui.showMobileSideMenu
+  isSideMenuShown: state.ui.showMobileSideMenu,
+  inputFocused: state.ui.inputFocused
 });
 
 const mapDispatchToProps = (dispatch) => bindActionCreators({
@@ -95,7 +110,8 @@ const mapDispatchToProps = (dispatch) => bindActionCreators({
   changeNewMeal,
   postMeal,
   removeMeal,
-  toggleMobileSideMenu
+  toggleMobileSideMenu,
+  inputFocus
 }, dispatch);
 
 export default withRouter(connect(

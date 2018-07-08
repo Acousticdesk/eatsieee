@@ -1,6 +1,6 @@
 import { REQUEST_MEALS, RECEIVE_MEALS, REQUEST_REMOVE_MEAL, RECEIVE_REMOVE_MEAL } from '../meals/actions';
 import { REQUEST_NEW_MEAL, RECEIVE_NEW_MEAL } from '../newMeal/actions';
-import {WINDOW_SIZE_CHANGE, TOGGLE_MOBILE_SIDE_MENU, toggleMobileSideMenu} from '../ui/actions';
+import { WINDOW_SIZE_CHANGE, TOGGLE_MOBILE_SIDE_MENU, INPUT_FOCUS } from '../ui/actions';
 
 /*
   {
@@ -33,6 +33,11 @@ const reducer = (state = {}, action) => {
       return {
         ...state,
         showMobileSideMenu: action.payload !== undefined ? action.payload : !state.showMobileSideMenu
+      };
+    case INPUT_FOCUS:
+      return {
+        ...state,
+        inputFocused: action.field
       };
     default:
       return state;

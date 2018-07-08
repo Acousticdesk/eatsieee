@@ -32,10 +32,7 @@
     "eslint-config-airbnb": "^17.0.0",
     "mini-css-extract-plugin": "0.3.0",
     "node-sass": "^4.9.0",
-    "sass-loader": "^7.0.3",
-    "webpack": "^4.15.1",
-    "webpack-clean": "^1.2.1",
-    "webpack-cli": "^3.0.8"
+    "sass-loader": "^7.0.3"
   },
   "keywords": [],
   "author": "",

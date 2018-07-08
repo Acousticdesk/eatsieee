@@ -1,12 +1,13 @@
 import React from 'react';
+import Input from '../components/Input';
 
-export default function ({onMealInputChange, onAddMeal, value}) {
+export default function ({onMealInputChange, onMealInputFocus, isMealInputFocused, onMealInputBlur, onAddMeal, value}) {
   return (
     <React.Fragment>
       <fieldset>
         <legend>Dishes:</legend>
         <textarea
-            data-type="dishes"
+            name="dishes"
             onChange={onMealInputChange}
             autoFocus="m">
             {value.dishes}
@@ -16,12 +17,13 @@ export default function ({onMealInputChange, onAddMeal, value}) {
       </fieldset>
       <br/>
       <fieldset>
-        <legend>Time:</legend>
-        <input
-            data-type="time"
-            onChange={onMealInputChange}
-            value={value.time}
-            type="text" />
+        <Input
+          focused={isMealInputFocused}
+          value={value.time}
+          onChange={onMealInputChange}
+          onFocus={onMealInputFocus}
+          onBlur={onMealInputBlur}
+        />
         <br/>
         <i>Example: 12:34AM</i>
       </fieldset>

@@ -2,9 +2,7 @@ import React from 'react';
 
 import MealsList from '../components/MealsList';
 
-export default function (props) {
-  const {meals, fetchMealsIfNeeded, shouldDisplayList} = props;
-
+export default function ({meals, fetchMealsIfNeeded, shouldDisplayList}) {
   return (
     <React.Fragment>
       <p className="l-h1">What have I eaten today 🤔:</p>

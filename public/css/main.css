@@ -62,7 +62,7 @@ a {
   .l-side-menu.skin {
     background: #fff;
     box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12);
-    transition: right 300ms ease-out, opacity 300ms ease-out, visibility 1ms 300ms linear;
+    transition: right 300ms linear, opacity 300ms linear, visibility 1ms 300ms linear;
     opacity: 0;
     right: -280px; }
   .l-side-menu.skin.show {
@@ -181,6 +181,43 @@ a {
     flex: 1 1 auto; }
     .list__item-content.skin {
       border-bottom: 1px solid #eee; }
+
+@keyframes appearance {
+  from {
+    transform: scale(0, 1); }
+  to {
+    transform: scale(1, 1); } }
+
+.input {
+  position: relative;
+  padding: 24px 0 0 0; }
+  .input.skin {
+    border-bottom: 2px solid #eee; }
+    .input.skin--focused:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #309bf3;
+      animation: appearance 150ms linear; }
+  .input__label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(0, 1.25em); }
+    .input__label.skin {
+      transition: transform 150ms linear; }
+      .input__label.skin--focused {
+        transform: translate(0, 0); }
+  .input__field {
+    display: block;
+    width: 100%; }
+    .input__field.skin {
+      border: none; }
+    .input__field.skin:focus {
+      outline: none; }
 
 .logo {
   padding: 0.625em 1.25em; }

@@ -8,7 +8,7 @@
   &.skin {
     background: #fff;
     box-shadow: dp-shadow(16);
-    transition: right 300ms ease-out, opacity 300ms ease-out, visibility 1ms 300ms linear;
+    transition: right 300ms linear, opacity 300ms linear, visibility 1ms 300ms linear;
     opacity: 0;
     right: -280px;
   }
